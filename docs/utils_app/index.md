@@ -48,13 +48,12 @@ pip install tinkun_utils_app
 ## Quick Start
 
 ```python
-# backend/settings/base.py
-from tinkun_utils.app_config.default_config_loader import load_default_config
-
-load_default_config()
+# settings.py
+INSTALLED_APPS = [
+    ...
+    "tinkun_utils_app",
+]
 ```
-
-This automatically configures logging, health checks, security middleware, CORS headers, and more.
 
 ## Links
 
