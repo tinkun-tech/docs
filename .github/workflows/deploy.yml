@@ -25,6 +25,7 @@ jobs:
 
       - name: Checkout utils-app
         uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: tinkun-tech/utils-app
           token: ${{ secrets.GH_PAT }}
@@ -32,6 +33,7 @@ jobs:
 
       - name: Checkout email-app
         uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: tinkun-tech/email-app
           token: ${{ secrets.GH_PAT }}
@@ -39,6 +41,7 @@ jobs:
 
       - name: Checkout auth-app
         uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: tinkun-tech/authentication-app
           token: ${{ secrets.GH_PAT }}
@@ -46,6 +49,7 @@ jobs:
 
       - name: Checkout oidc-app
         uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: tinkun-tech/oidc-app
           token: ${{ secrets.GH_PAT }}
@@ -53,6 +57,7 @@ jobs:
 
       - name: Checkout instant-win-app
         uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: tinkun-tech/instant-win-app
           token: ${{ secrets.GH_PAT }}
@@ -60,6 +65,7 @@ jobs:
 
       - name: Checkout code-app
         uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: tinkun-tech/code-app
           token: ${{ secrets.GH_PAT }}
