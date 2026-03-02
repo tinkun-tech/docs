@@ -9,7 +9,7 @@ pip install tinkun_translation_app
 ```
 
 !!! note "Documentation coming soon"
-    Feature guides will be added in a future release.
+Feature guides will be added in a future release.
 
 ## Links
 

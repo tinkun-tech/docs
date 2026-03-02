@@ -99,6 +99,7 @@ STRUCTLOG_USE_JSON = True  # Force JSON output regardless of DEBUG
 ```
 
 This is useful when:
+
 - You have `DEBUG=True` in staging but still need machine-parseable logs
 - Your log aggregator (New Relic, Datadog, etc.) requires JSON format
 - You want consistent JSON logs across all environments
@@ -360,5 +361,6 @@ logger.info("user_registered", user_id=user_id, email=email)
 ## Support
 
 For issues or questions:
+
 - File an issue in the tinkun_utils_app repository
 - Contact the Tinkun infrastructure team

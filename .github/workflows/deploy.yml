@@ -119,6 +119,9 @@ jobs:
           sync_app oidc_app
           sync_app translation_app
 
+      - name: Lint and fix markdown
+        run: npx markdownlint-cli2 --fix "docs/**/*.md"
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
