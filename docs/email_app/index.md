@@ -2,6 +2,12 @@
 
 Transactional and marketing email service for Tinkun projects.
 
+## Installation
+
+```bash
+pip install tinkun_email_app
+```
+
 !!! note "Documentation coming soon"
     Feature guides will be added in a future release.
 

@@ -71,6 +71,12 @@ nav:
   - Instant Win App:
       - Overview: instant_win_app/index.md
       - Changelog: instant_win_app/changelog.md
+  - Marketplace App:
+      - Overview: marketplace_app/index.md
+      - Changelog: marketplace_app/changelog.md
   - Code App:
       - Overview: code_app/index.md
       - Changelog: code_app/changelog.md
+  - Translation App:
+      - Overview: translation_app/index.md
+      - Changelog: translation_app/changelog.md

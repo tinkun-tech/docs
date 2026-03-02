@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Checkout utils-app
+      - name: Checkout utils_app
         uses: actions/checkout@v4
         continue-on-error: true
         with:
@@ -31,7 +31,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           path: tmp/utils_app
 
-      - name: Checkout email-app
+      - name: Checkout email_app
         uses: actions/checkout@v4
         continue-on-error: true
         with:
@@ -39,7 +39,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           path: tmp/email_app
 
-      - name: Checkout auth-app
+      - name: Checkout auth_app
         uses: actions/checkout@v4
         continue-on-error: true
         with:
@@ -47,15 +47,15 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           path: tmp/auth_app
 
-      - name: Checkout oidc-app
+      - name: Checkout code_app
         uses: actions/checkout@v4
         continue-on-error: true
         with:
-          repository: tinkun-tech/oidc-app
+          repository: tinkun-tech/code-app
           token: ${{ secrets.GH_PAT }}
-          path: tmp/oidc_app
+          path: tmp/code_app
 
-      - name: Checkout instant-win-app
+      - name: Checkout instant_win_app
         uses: actions/checkout@v4
         continue-on-error: true
         with:
@@ -63,13 +63,29 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           path: tmp/instant_win_app
 
-      - name: Checkout code-app
+      - name: Checkout marketplace_app
         uses: actions/checkout@v4
         continue-on-error: true
         with:
-          repository: tinkun-tech/code-app
+          repository: tinkun-tech/marketplace-app
           token: ${{ secrets.GH_PAT }}
-          path: tmp/code_app
+          path: tmp/marketplace_app
+
+      - name: Checkout oidc_app
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          repository: tinkun-tech/oidc-app
+          token: ${{ secrets.GH_PAT }}
+          path: tmp/oidc_app
+
+      - name: Checkout translation_app
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          repository: tinkun-tech/translation-app
+          token: ${{ secrets.GH_PAT }}
+          path: tmp/translation_app
 
       - name: Sync docs from app repos
         run: |
@@ -78,18 +94,17 @@ jobs:
             local dest="docs/${app}"
             local src="tmp/${app}"
 
-            # Copy feature docs (skip index.md and changelog.md — kept in this repo)
+            # Copy feature docs (skip index.md — curated in this repo)
             if [ -d "${src}/docs" ]; then
               find "${src}/docs" -maxdepth 1 -name "*.md" | while read f; do
                 fname=$(basename "$f")
-                # Don't overwrite the curated index.md
                 if [ "$fname" != "index.md" ]; then
                   cp "$f" "${dest}/"
                 fi
               done
             fi
 
-            # Copy CHANGELOG.md if it exists in the app root
+            # Copy CHANGELOG.md if present in app root
             if [ -f "${src}/CHANGELOG.md" ]; then
               cp "${src}/CHANGELOG.md" "${dest}/changelog.md"
             fi
@@ -98,9 +113,11 @@ jobs:
           sync_app utils_app
           sync_app email_app
           sync_app auth_app
-          sync_app oidc_app
-          sync_app instant_win_app
           sync_app code_app
+          sync_app instant_win_app
+          sync_app marketplace_app
+          sync_app oidc_app
+          sync_app translation_app
 
       - name: Set up Python
         uses: actions/setup-python@v5
