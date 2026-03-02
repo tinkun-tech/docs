@@ -19,12 +19,12 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout tinkun-docs
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Checkout utils_app
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         continue-on-error: true
         with:
           repository: tinkun-tech/utils-app
@@ -32,7 +32,7 @@ jobs:
           path: tmp/utils_app
 
       - name: Checkout email_app
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         continue-on-error: true
         with:
           repository: tinkun-tech/email-app
@@ -40,7 +40,7 @@ jobs:
           path: tmp/email_app
 
       - name: Checkout auth_app
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         continue-on-error: true
         with:
           repository: tinkun-tech/authentication-app
@@ -48,7 +48,7 @@ jobs:
           path: tmp/auth_app
 
       - name: Checkout code_app
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         continue-on-error: true
         with:
           repository: tinkun-tech/code-app
@@ -56,7 +56,7 @@ jobs:
           path: tmp/code_app
 
       - name: Checkout instant_win_app
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         continue-on-error: true
         with:
           repository: tinkun-tech/instant-win-app
@@ -64,7 +64,7 @@ jobs:
           path: tmp/instant_win_app
 
       - name: Checkout marketplace_app
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         continue-on-error: true
         with:
           repository: tinkun-tech/marketplace-app
@@ -72,7 +72,7 @@ jobs:
           path: tmp/marketplace_app
 
       - name: Checkout oidc_app
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         continue-on-error: true
         with:
           repository: tinkun-tech/oidc-app
@@ -80,7 +80,7 @@ jobs:
           path: tmp/oidc_app
 
       - name: Checkout translation_app
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         continue-on-error: true
         with:
           repository: tinkun-tech/translation-app
@@ -123,9 +123,10 @@ jobs:
         run: npx markdownlint-cli2 --fix "docs/**/*.md"
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+          cache: pip
 
       - name: Install MkDocs
         run: pip install -r requirements.txt
