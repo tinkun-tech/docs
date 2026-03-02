@@ -51,7 +51,7 @@ pip install tinkun_utils_app
 # settings.py
 INSTALLED_APPS = [
     ...
-    "tinkun_utils_app",
+    "tinkun_utils",
 ]
 ```
 
