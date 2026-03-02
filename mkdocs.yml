@@ -1,0 +1,76 @@
+site_name: Tinkun Docs Hub
+site_url: https://tinkun-tech.github.io/docs
+site_description: Developer documentation for all Tinkun apps
+repo_url: https://github.com/tinkun-tech/docs
+repo_name: tinkun-tech/docs
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Utils App:
+      - Overview: utils_app/index.md
+      - Changelog: utils_app/changelog.md
+      - Structured Logging: utils_app/STRUCTLOG_GUIDE.md
+      - AWS S3 Presigned URLs: utils_app/aws_get_signed_url.md
+      - Health Checks: utils_app/health_check.md
+      - reCAPTCHA Decorator: utils_app/recaptcha_handler_decorator.md
+      - User Status Management: utils_app/user_status.md
+  - Email App:
+      - Overview: email_app/index.md
+      - Changelog: email_app/changelog.md
+  - Auth App:
+      - Overview: auth_app/index.md
+      - Changelog: auth_app/changelog.md
+  - OIDC App:
+      - Overview: oidc_app/index.md
+      - Changelog: oidc_app/changelog.md
+  - Instant Win App:
+      - Overview: instant_win_app/index.md
+      - Changelog: instant_win_app/changelog.md
+  - Code App:
+      - Overview: code_app/index.md
+      - Changelog: code_app/changelog.md
