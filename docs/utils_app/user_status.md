@@ -110,12 +110,14 @@ user3@example.com
 
 You can override these templates in your project:
 
+```
 tinkun_utils/admin/user/
-├── change_list.html # Admin list view with action buttons
-├── suspend_users.html # Suspend users form
+├── change_list.html          # Admin list view with action buttons
+├── suspend_users.html        # Suspend users form
 ├── suspend_confirmation.html # Suspend results page
-├── reactivate_users.html # Reactivate users form
+├── reactivate_users.html     # Reactivate users form
 └── reactivate_confirmation.html # Reactivate results page
+```
 
 ## Error Handling
 
