@@ -102,13 +102,10 @@ jobs:
             local dest="docs/${app}"
             local src="tmp/${app}"
 
-            # Copy feature docs (skip index.md — curated in this repo)
+            # Copy all docs including index.md (owned by the app repo)
             if [ -d "${src}/docs" ]; then
               find "${src}/docs" -maxdepth 1 -name "*.md" | while read f; do
-                fname=$(basename "$f")
-                if [ "$fname" != "index.md" ]; then
-                  cp "$f" "${dest}/"
-                fi
+                cp "$f" "${dest}/"
               done
             fi
 
