@@ -1,4 +1,4 @@
-# Auth App
+# Quick Start
 
 Authentication and user management service for Tinkun projects.
 

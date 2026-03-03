@@ -1,4 +1,4 @@
-# Instant Win App
+# Quick Start
 
 Promotional instant-win campaign management for Tinkun projects.
 

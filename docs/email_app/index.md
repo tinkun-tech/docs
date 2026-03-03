@@ -1,4 +1,4 @@
-# Email App
+# Quick Start
 
 Transactional and marketing email service for Tinkun projects.
 

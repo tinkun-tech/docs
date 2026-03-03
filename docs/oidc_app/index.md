@@ -1,4 +1,4 @@
-# OIDC App
+# Quick Start
 
 OpenID Connect provider for Tinkun projects.
 

@@ -1,0 +1,7 @@
+[project]
+site_name = "Tinkun Docs Hub"
+site_url = "https://tinkun-tech.github.io/docs"
+site_description = "Developer documentation for all Tinkun apps"
+
+[project.theme]
+variant = "classic"

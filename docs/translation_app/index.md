@@ -1,4 +1,4 @@
-# Translation App
+# Quick Start
 
 Translation and localisation service for Tinkun projects.
 

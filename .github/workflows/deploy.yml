@@ -10,18 +10,26 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
-    name: Build and Deploy MkDocs
+    name: Build and Deploy
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout tinkun-docs
         uses: actions/checkout@v6
         with:
           fetch-depth: 1
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Checkout utils_app
         uses: actions/checkout@v6
@@ -125,10 +133,17 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Install MkDocs
+      - name: Install Zensical
         run: pip install -r requirements.txt
 
+      - name: Build site
+        run: zensical build --clean
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: deployment
+        uses: actions/deploy-pages@v4

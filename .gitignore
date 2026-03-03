@@ -1,0 +1,15 @@
+# Zensical build output
+site/
+
+# App repos synced during CI
+tmp/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Misc
+.cache/
+.env

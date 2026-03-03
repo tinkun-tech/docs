@@ -1,4 +1,4 @@
-# Code App
+# Quick Start
 
 Promo code management service for Tinkun projects.
 

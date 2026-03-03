@@ -1,4 +1,4 @@
-# Utils App
+# Quick Start
 
 A collection of reusable utilities, configurations, and components for Tinkun Django projects.
 
