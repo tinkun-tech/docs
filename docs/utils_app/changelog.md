@@ -6,6 +6,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [v4.1.0] — 2026-03-03
+
+### Added
+
+- `USER_STATUS_MODEL` optional setting to target a custom model for user suspension (defaults to Django auth user model)
+
+---
+
 ## [v4.0.0] — 2026-02-26
 
 ### Changed
